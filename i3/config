@@ -1,0 +1,328 @@
+#Author : wlh       https://github.com/wlh320/wlh-dotfiles
+#鸣谢   : 修改自 oh-my-i3 github: https://github.com/ID1258/oh-my-i3.git
+
+############################# 工作区 ###############################
+# => 设定mod键与工作区名
+set $mod  Mod4
+set $WS1  1:  
+set $WS2  2: 
+set $WS3  3: 
+set $WS4  4:  
+set $WS5  5:  
+set $WS6  6: 
+set $WS7  7:  
+set $WS8  8: 
+set $WS9  9:  
+set $WS0  0:  
+
+# => 工作区切换
+# 自动切换到新打开的窗口
+focus_on_window_activation smart
+# 重复切换到当前工作区时会返回上一个所在工作区
+workspace_auto_back_and_forth yes
+
+bindsym $mod+1 workspace $WS1
+bindsym $mod+2 workspace $WS2
+bindsym $mod+3 workspace $WS3
+bindsym $mod+4 workspace $WS4
+bindsym $mod+5 workspace $WS5, exec --no-startup-id ~/program/scripts/st zeal
+bindsym $mod+6 workspace $WS6
+bindsym $mod+7 workspace $WS7, exec --no-startup-id ~/program/scripts/st virtualbox
+bindsym $mod+8 workspace $WS8
+bindsym $mod+9 workspace $WS9, exec --no-startup-id ~/program/scripts/st xfce4-taskmanager
+bindsym $mod+0 workspace $WS0
+
+# => 移动窗口到另一个工作区
+bindsym $mod+shift+1 move container to workspace $WS1, workspace $WS1
+bindsym $mod+shift+2 move container to workspace $WS2, workspace $WS2
+bindsym $mod+shift+3 move container to workspace $WS3, workspace $WS3
+bindsym $mod+shift+4 move container to workspace $WS4, workspace $WS4
+bindsym $mod+shift+5 move container to workspace $WS5, workspace $WS5
+bindsym $mod+shift+6 move container to workspace $WS6, workspace $WS6
+bindsym $mod+shift+7 move container to workspace $WS7, workspace $WS7
+bindsym $mod+shift+8 move container to workspace $WS8, workspace $WS8
+bindsym $mod+shift+9 move container to workspace $WS9, workspace $WS9
+bindsym $mod+shift+0 move container to workspace $WS0, workspace $WS0
+
+assign [class="(?i)firefox"] → $WS2
+assign [class="(?i)chrome"] → $WS2
+assign [class="(?i)idea"] → $WS3
+assign [class="(?i)code"] → $WS4
+assign [class="(?i)gvim"] → $WS4
+assign [class="(?i)qtcreator"] → $WS3
+assign [class="(?i)spotify"] → $WS6
+assign [class="(?i)virtualbox"] → $WS7
+assign [class="(?i)wps"] → $WS7
+assign [class="(?i)wpp"] → $WS7
+assign [class="(?i)zeal"] → $WS5
+assign [class="(?i)xfce4-taskmanager"] → $WS9
+assign [class="(?i)electronic-wechat"] → $WS0
+assign [class="(?i)xfce4-terminal"] → $WS1
+
+
+
+
+
+set $monitor_left DP-1-1-8
+set $monitor_right eDP-1-1
+
+
+# switch to output
+# bindsym $mod+shift+w focus output $monitor_left
+# bindsym $mod+shift+c focus output $monitor_right
+
+bindsym mod1+Left move workspace to output $monitor_left
+bindsym mod1+Right move workspace to output $monitor_right
+
+
+# workspace $WS1 output $monitor_left
+# workspace $WS2 output $monitor_right
+# workspace $WS3 output $monitor_right
+# workspace $WS4 output $monitor_left
+# workspace $WS5 output $monitor_left
+# workspace $WS6 output $monitor_right
+# workspace $WS7 output $monitor_right
+# workspace $WS8 output $monitor_left
+# workspace $WS9 output $monitor_left
+# workspace $WS0 output $monitor_left
+
+
+
+############################# 窗口管理 ###############################
+
+# => 自定义窗口（支持定义边框类型，窗口布局，大小调整，自动归类工作区等等，多个定义用,隔开）
+for_window [class="(?i)thunar"] layout tabbed
+for_window [class="(?i)idea"] layout tabbed
+for_window [class="(?i)google-chrome"] layout tabbed
+
+#弹出的窗口统一设置成浮动类型
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="task_dialog"] floating enable
+
+# => 窗口边框类型（边框类型有normal正常/none无边框/pixel 1 自定义宽度）
+# 默认普通窗口的边框类型
+new_window none
+# 默认浮动窗口的边框类型
+new_float normal
+# 取消工作区边缘的边框
+hide_edge_borders both
+# 在三种边框类型中切换
+bindsym $mod+b border toggle
+
+# => 新建窗口的分割方向
+bindsym $mod+h split h
+bindsym $mod+v split v
+
+# => 移动窗口
+bindsym $mod+Left  move left
+bindsym $mod+Down  move down
+bindsym $mod+Up    move up
+bindsym $mod+Right move right
+
+# => 调整窗口大小
+bindsym $mod+Shift+Left  resize shrink width  10 px or 1 ppt
+bindsym $mod+Shift+Down  resize grow   height 10 px or 1 ppt
+bindsym $mod+Shift+Up    resize shrink height 10 px or 1 ppt
+bindsym $mod+Shift+Right resize grow   width  10 px or 1 ppt
+
+# => 关闭窗口
+bindsym $mod+q kill
+
+# => 焦点切换
+# 焦点跟随鼠标移动
+# focus_follows_mouse yes
+no_focus [window_role="pop-up"]
+# 焦点切换到父窗口
+bindsym $mod+p focus parent
+# 焦点切换回子窗口
+bindsym $mod+Shift+p focus child
+# 焦点切换到浮动窗口
+bindsym $mod+Shift+space focus mode_toggle
+
+# 窗口聚焦
+bindsym $mod+shift+h focus up
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+#聚焦到urgent窗口
+bindsym $mod+u [urgent=latest] 
+
+
+#窗口拖拽 alt+鼠标
+floating_modifier Mod1
+
+# 切换到堆叠布局
+# bindsym $mod+z layout stacking
+# 切换到标签布局
+# bindsym $mod+x layout tabbed
+# 切换到平铺布局（竖直/水平）
+# bindsym $mod+c layout toggle split
+
+# 在所有布局中轮回切换
+bindsym $mod+x layout toggle all
+# 窗口切换到全屏
+bindsym $mod+f fullscreen toggle
+# 窗口切换到浮动
+bindsym $mod+space floating toggle
+# 窗口切换为粘滞
+bindsym $mod+g sticky toggle
+
+# => 暂存窗口（额外的可隐藏浮动窗口，取消浮动还原成普通窗口）
+# 转换普通窗口为暂存窗口
+bindsym $mod+Shift+minus move scratchpad
+# 呼出/隐藏暂存窗口
+bindsym $mod+minus scratchpad show
+
+
+
+
+############################# 快捷键 ###############################
+
+# => 重新载入（更改配置文件后只须重载即可生效，不包含自启部分）
+bindsym $mod+Shift+r restart
+
+# bindsym $mod+Tab    exec rofi -show window -lines 3 -font "Roboto 14" -hide-scrollbar -opacity "50" -separator-style "none" -line-margin 7 -padding 340 -width 100
+bindsym $mod+Tab workspace next
+bindsym $mod+Shift+Tab workspace prev
+
+# bindsym $mod+F12  workspace back_and_forth
+
+#程序启动
+bindsym $mod+Return     exec --no-startup-id xfce4-terminal
+bindsym $mod+e          exec --no-startup-id nautilus
+bindsym $mod+c	        exec --no-startup-id google-chrome
+bindsym $mod+z          exec --no-startup-id zeal
+bindsym $mod+Delete     exec --no-startup-id gnome-system-monitor
+bindsym $mod+d          exec rofi -show run
+#截图
+bindsym Print exec deepin-screenshot -sn ～/Pictures/screenshot/deepin-`date +%y-%m-%d-%T`.png -f 
+
+
+# bindsym $mod+Print exec deepin-screenshot -s ～/Pictures/screenshot/deepin-`date +%y-%m-%d-%T`.png
+bindsym mod1+a exec deepin-screenshot 
+bindsym $mod+Print exec escrotum -sC
+
+
+#锁屏
+bindsym mod1+l      exec i3lock-next 
+
+#系统命令a
+set $mode_system 锁屏(L) 注销(O) 关机(S) 重启(R) 取消(Esc)
+#    bindsym $mod+shift+q mode "$mode_system"
+     bindsym Pause mode "$mode_system"
+    mode "$mode_system" {
+        bindsym l exec i3lock-next 
+        bindsym o exec i3-msg exit
+        bindsym s exec systemctl poweroff
+        bindsym r exec systemctl reboot
+        bindsym Escape mode "default"
+    }
+
+############################# 主题相关 ###############################
+
+# 字体
+font pango:Noto Sans 12
+#font pango:hack 11
+# 窗口颜色                边框    背景    文字    提示
+client.focused          #333333 #333333 #FFFFFF #333333
+client.focused_inactive #999999 #999999 #FFFFFF #3399FF
+client.unfocused        #999999 #999999 #FFFFFF #3399FF
+client.urgent           #990000 #990000 #FFFFFF #990000
+client.placeholder      #000000 #000000 #FFFFFF #000000
+client.background       #FFFFFF
+
+# i3bar
+# bindsym $mod+m bar mode toggle
+
+bar {
+    font pango:Noto Sans CJK SC 12
+    i3bar_command i3bar -t
+    height 26
+    #禁止systemtray
+    tray_output none
+    # i3bar调用
+    status_command ~/.config/i3/jconky
+    # 显示位置top/bottom
+    position top
+    # 是否隐藏
+    #mode hide
+    # 拆解工作区名（隐藏前面的1:2:3:……）
+    strip_workspace_numbers no
+    # 定义分隔符∥
+    separator_symbol "  >  "
+
+    colors {
+        background #10101000
+        statusline #FFFFFF
+        separator  #3399FF
+        # 工作区颜色         边框    背景    文字
+        focused_workspace  #3297FD #11111100 #FFFFFF
+        active_workspace   #FFFFFF #FFFFFF00 #FFFFFF
+        inactive_workspace #111111 #11111100 #FFFFFF
+        urgent_workspace   #990000 #11111100 #FFFFFF
+        binding_mode       #990000 #99000000 #FFFFFF
+    }
+}
+
+############################# 开机启动 ###############################
+exec xrandr --output $monitor_left --auto --output $monitor_right --mode 1366x768 --right-of $monitor_left
+exec --no-startup-id feh --bg-fill /home/xuan/Pictures/Wallpapers/fav.jpg
+#exec --no-startup-id nitrogen --restore
+exec --no-startup-id compton -CGb
+#exec --no-startup-id xfce4-panel
+# exec --no-startup-id tint2
+exec --no-startup-id ss-qt5
+exec --no-startup-id albert
+#exec --no-startup-id volumeicon
+#exec --no-startup-id nm-applet
+#exec --no-startup-id xfce4-power-manager
+#exec --no-startup-id shutter --min_at_startup
+#exec --no-startup-id ~/program/XX-Net-2.7.3/start.sh
+exec --no-startup-id xset r rate 300 45
+exec --no-startup-id xset dpms 600
+#闲置600秒后黑屏
+exec --no-startup-id fcitx && sogou-qimpanelr
+
+
+############################ i3-gaps #################################
+gaps inner 8
+gaps outer 6
+smart_gaps on
+set $mode_gaps Gaps: (o) outer, (i) inner
+set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
+set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
+bindsym $mod+Shift+g mode "$mode_gaps"
+
+mode "$mode_gaps" {
+    bindsym o      mode "$mode_gaps_outer"
+    bindsym i      mode "$mode_gaps_inner"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+
+}
+
+mode "$mode_gaps_inner" {
+    bindsym plus  gaps inner current plus 5
+    bindsym minus gaps inner current minus 5
+    bindsym 0     gaps inner current set 0
+
+    bindsym Shift+plus  gaps inner all plus 5
+    bindsym Shift+minus gaps inner all minus 5
+    bindsym Shift+0     gaps inner all set 0
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+
+}
+mode "$mode_gaps_outer" {
+    bindsym plus  gaps outer current plus 5
+    bindsym minus gaps outer current minus 5
+    bindsym 0     gaps outer current set 0
+
+    bindsym Shift+plus  gaps outer all plus 5
+    bindsym Shift+minus gaps outer all minus 5
+    bindsym Shift+0     gaps outer all set 0
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
