@@ -1,0 +1,41 @@
+
+nnoremap <SPACE> <Nop>
+let mapleader = " "
+set easymotion
+set surround
+set incsearch
+set ignorecase
+set smartcase
+set ideajoin
+
+nnoremap L $
+nnoremap H ^
+nnoremap ; :
+
+
+noremap <Leader>y "*y
+noremap <Leader>p "*p
+noremap <Leader>Y "+y
+noremap <Leader>P "+p
+nnoremap <leader>a :action GotoAction<CR>
+nnoremap <leader>b :action Bookmarks<CR>
+nnoremap <leader>c :action GotoClass<CR>
+nnoremap <leader>d :action GotoDeclaration<CR>
+nnoremap gs :action GotoSuperMethod<CR>
+nnoremap <leader>e :action SearchEverywhere<CR>
+nnoremap <leader>f :action FindInPath<CR>
+nnoremap <leader>g :action Git.Menu<CR>
+nnoremap <leader>i :action Maven.Reimport<CR>
+nnoremap <leader>m :action ActivateMavenToolWindow<CR>
+nnoremap <leader>r :action RecentFiles<CR>
+nnoremap <leader>s :action FileStructurePopup<CR>
+nnoremap gb :action JumpToLastChange<CR>
+nnoremap gs :action GotoSuperMethod<CR>
+nnoremap gi :action GotoImplementation<CR>
+nnoremap U :action FindUsages<CR>
+nnoremap R :action RenameElement<CR>
+nnoremap == :action ReformatCode<CR>
+vnoremap = :action ReformatCode<CR>
+nnoremap cc :action CommentByLineComment<CR>
+vnoremap cc :action CommentByLineComment<CR>
+nnoremap <C-CR> :action ShowIntentionActions<CR>
