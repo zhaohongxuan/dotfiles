@@ -1,1 +1,61 @@
-.ideavimrc
+nnoremap <SPACE> <Nop>
+let mapleader = " "
+set easymotion
+set surround
+set incsearch
+set ignorecase
+set smartcase
+set ideajoin
+set showmode
+
+nnoremap L $
+nnoremap H ^
+vnoremap L $
+vnoremap H ^
+nnoremap ; :
+
+
+map <LEADER>j <C-W>j
+"map <LEADER>k <C-W>k
+"map <LEADER>h <C-W>h
+map <LEADER>l <C-W>l
+
+noremap <Leader>y "*y
+noremap <Leader>p "*p
+noremap <Leader>P "0p
+vnoremap Y "+y
+nnoremap <leader>a :action GotoAction<CR>
+nnoremap <leader>b :action Bookmarks<CR>
+nnoremap <leader>c :action GotoClass<CR>
+nnoremap <leader>d :action Debug<CR>
+nnoremap <leader>e :action SearchEverywhere<CR>
+nnoremap <leader>f :action FindInPath<CR>
+nnoremap <leader>gc :action Git.CompareWithBranch<CR>
+nnoremap <leader>gr :action Git.ResolveConflicts<CR>
+nnoremap <leader>ga :action Annotate<CR>
+nnoremap <leader>i :action Maven.Reimport<CR>
+nnoremap <leader>m :action ActivateMavenToolWindow<CR>
+nnoremap <leader>n :action NextProjectWindow<CR>
+nnoremap <leader>or :action FileMenu<CR>
+nnoremap <leader>r :action RecentFiles<CR>
+nnoremap <leader>s :action FileStructurePopup<CR>
+
+nnoremap <leader>ve :e ~/.ideavimrc<CR>
+nnoremap <leader>vw :w!<CR>
+nnoremap <leader>vs :source ~/.ideavimrc<CR>
+
+nnoremap gs :action GotoSuperMethod<CR>
+nnoremap gb :action JumpToLastChange<CR>
+nnoremap gs :action GotoSuperMethod<CR>
+nnoremap gi :action GotoImplementation<CR>
+nnoremap gd :action GotoDeclaration<CR>
+nnoremap gr :action RenameElement<CR>
+
+nnoremap U :action FindUsages<CR>
+nnoremap R :action RenameElement<CR>
+nnoremap == :action ReformatCode<CR>
+vnoremap = :action ReformatCode<CR>
+nnoremap cc :action CommentByLineComment<CR>
+vnoremap cc :action CommentByLineComment<CR>
+nnoremap <C-CR> :action ShowIntentionActions<CR>
+
