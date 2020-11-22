@@ -1,61 +1,101 @@
+"==========================================
+" Author:  hank.zhao
+" Version: 0.1
+" Email: hxzhenu@gmai.com
+" Desc: my ideavim config file
+"==========================================
+" set leader key
 nnoremap <SPACE> <Nop>
 let mapleader = " "
+
+" search
+set hlsearch
+set incsearch
+set smartcase
+set ignorecase
+
+" plugins
 set easymotion
 set surround
-set incsearch
-set ignorecase
-set smartcase
-set ideajoin
-set showmode
 
+" basic key mapping
 nnoremap L $
 nnoremap H ^
 vnoremap L $
 vnoremap H ^
 nnoremap ; :
 
+" clear the highlighted search result
+nnoremap <Leader>sc :nohlsearch<CR>
 
-map <LEADER>j <C-W>j
-"map <LEADER>k <C-W>k
-"map <LEADER>h <C-W>h
-map <LEADER>l <C-W>l
+" Move half page faster
+nnoremap <LEADER>d  <C-d>
+nnoremap <leader>u  <C-u>
 
+" Window operation
+nnoremap <leader>ww <C-W>w
+nnoremap <leader>wd <C-W>c
+nnoremap <leader>wj <C-W>j
+nnoremap <leader>wk <C-W>k
+nnoremap <leader>wh <C-W>h
+nnoremap <leader>wl <C-W>l
+nnoremap <leader>ws <C-W>s
+nnoremap <leader>w- <C-W>s
+noremap <leader>wv <C-W>v
+nnoremap <leader>w\| <C-W>v
+
+" copy and paste
 noremap <Leader>y "*y
 noremap <Leader>p "*p
 noremap <Leader>P "0p
 vnoremap Y "+y
-nnoremap <leader>a :action GotoAction<CR>
-nnoremap <leader>b :action Bookmarks<CR>
-nnoremap <leader>c :action GotoClass<CR>
-nnoremap <leader>d :action Debug<CR>
-nnoremap <leader>e :action SearchEverywhere<CR>
-nnoremap <leader>f :action FindInPath<CR>
-nnoremap <leader>gc :action Git.CompareWithBranch<CR>
-nnoremap <leader>gr :action Git.ResolveConflicts<CR>
-nnoremap <leader>ga :action Annotate<CR>
-nnoremap <leader>i :action Maven.Reimport<CR>
-nnoremap <leader>m :action ActivateMavenToolWindow<CR>
-nnoremap <leader>n :action NextProjectWindow<CR>
-nnoremap <leader>or :action FileMenu<CR>
-nnoremap <leader>r :action RecentFiles<CR>
-nnoremap <leader>s :action FileStructurePopup<CR>
 
+" Tab operation
+nnoremap tn gt
+nnoremap tp gT
+
+" Insert mode shortcut
+inoremap <C-h> <Left>
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-l> <Right>
+inoremap <C-a> <Home>
+inoremap <C-e> <End>
+inoremap <C-d> <Delete>
+
+" Quit normal mode
+nnoremap <Space>q  :q<CR>
+nnoremap <Space>Q  :qa!<CR>
+
+" edit vimrc
 nnoremap <leader>ve :e ~/.ideavimrc<CR>
 nnoremap <leader>vw :w!<CR>
 nnoremap <leader>vs :source ~/.ideavimrc<CR>
 
+" intellij built in key map
+nnoremap <leader>a :action GotoAction<CR>
+nnoremap <leader>b :action Bookmarks<CR>
+nnoremap <leader>c :action GotoClass<CR>
+nnoremap <leader>e :action SearchEverywhere<CR>
+nnoremap <leader>f :action FindInPath<CR>
+nnoremap <leader>gc :action Git.CompareWithBranch<CR>
+nnoremap <leader>gr :action Git.ResolveConflicts<CR
+nnoremap <leader>ga :action Annotate<CR>
+nnoremap <leader>or :action FileMenu<CR>
+nnoremap <leader>r :action RecentFiles<CR>
+nnoremap <leader>s :action FileStructurePopup<CR>
+
+" navigation
 nnoremap gs :action GotoSuperMethod<CR>
 nnoremap gb :action JumpToLastChange<CR>
-nnoremap gs :action GotoSuperMethod<CR>
 nnoremap gi :action GotoImplementation<CR>
 nnoremap gd :action GotoDeclaration<CR>
 nnoremap gr :action RenameElement<CR>
 
+" code actions
 nnoremap U :action FindUsages<CR>
 nnoremap R :action RenameElement<CR>
 nnoremap == :action ReformatCode<CR>
 vnoremap = :action ReformatCode<CR>
 nnoremap cc :action CommentByLineComment<CR>
 vnoremap cc :action CommentByLineComment<CR>
-nnoremap <C-CR> :action ShowIntentionActions<CR>
-
