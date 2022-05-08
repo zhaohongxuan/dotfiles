@@ -6,6 +6,7 @@
 "==========================================
 " set leader key
 nnoremap <SPACE> <Nop>
+inoremap <ESC> <Nop>
 let mapleader = " "
 
 " search
@@ -14,13 +15,15 @@ set incsearch
 set smartcase
 set ignorecase
 set showmode
-set de=on
+
+set showcmd
 set scrolloff=5
 
 " plugins
 set easymotion
 set surround
 set argtextobj
+
 set multiple-cursors
 " Remap multiple-cursors shortcuts for Mac
 nmap <C-n> <Plug>NextWholeOccurrence
@@ -38,6 +41,7 @@ set textobj-entire
 set keep-english-in-normal-and-restore-in-insert
 set NERDTree
 set ReplaceWithRegister
+
 " basic key mapping
 nnoremap L $
 vnoremap H ^
@@ -55,12 +59,21 @@ nnoremap <leader>d :NERDTreeFocus<CR>
 set ideajoin
 set idearefactormode=keep
 
-" clear the highlighted search result
+inoremap jk <esc>
+
+""" Idea specific settings ------------------
+set ideajoin
+set idearefactormode=keep
+
+" clear the higlighted search result
 nnoremap <Leader>sc :nohlsearch<CR>
 
+" Move half page faster
+nnoremap <LEADER>d  <C-d>
+nnoremap <leader>u  <C-u>
 " easymotion
 map <leader>f <Plug>(easymotion-s)
-
+map <leader>e <Plug>(easymotion-f)
 
 " Window operation
 
@@ -111,27 +124,31 @@ nnoremap <leader>c :action GotoClass<CR>
 "nnoremap <leader>e :action SearchEverywhere<CR>
 "nnoremap <leader>f :action FindInPath<CR>
 nnoremap <leader>gc :action Git.CompareWithBranch<CR>
+nnoremap <leader>gr :action Git.ResolveConflicts<CR>
 nnoremap <leader>ga :action Annotate<CR>
 nnoremap <leader>gh :action Vcs.ShowTabbedFileHistory<CR>
 nnoremap <leader>r :action RecentFiles<CR>
-nnoremap <leader>s :action SelectInProjectView<CR>
+
+nnoremap <leaders :action SelectInProjectView<CR>
 "toggle something
 "toggle track vim action Id
 nnoremap ta :action VimFindActionIdAction<CR>
 
 " run and debug
-nnoremap ,d :action Debug<CR>
-nnoremap ,r :action Run<CR>
-nnoremap ,c :action CompileDirty<CR>
-nnoremap ,b :action ToggleLineBreakpoint<CR>
-nnoremap ,v :action ViewBreakpoints<CR>
-nnoremap ,s :action Stop<CR>
+nnoremap zd :action Debug<CR>
+nnoremap zr :action Run<CR>
+nnoremap zc :action CompileDirty<CR>
+nnoremap zb :action ToggleLineBreakpoint<CR>
+nnoremap zv :action ViewBreakpoints<CR>
+nnoremap zs :action Stop<CR>
+
 " navigation
 nnoremap gs :action GotoSuperMethod<CR>
 nnoremap gb :action JumpToLastChange<CR>
 nnoremap gi :action GotoImplementation<CR>
 nnoremap gd :action GotoDeclaration<CR>
 nnoremap gf :action FileStructurePopup<CR>
+nnoremap gr :action ManageRecentProjects<CR>
 
 " code actions
 nnoremap U :action FindUsages<CR>
