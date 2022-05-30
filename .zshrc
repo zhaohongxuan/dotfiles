@@ -72,7 +72,7 @@ ZSH_THEME="spaceship"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git vi-mode zsh-autosuggestions)
+plugins=(git vi-mode zsh-autosuggestions tmux)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -105,4 +105,10 @@ alias mvi="mvn clean && mvn install -DskipTests=true"
 
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
 alias vim="nvim"
+eval "$(starship init zsh)"
+export PATH="/Users/hank.zhao/Developer/git-fuzzy/bin:$PATH"
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+#export JAVA_HOME="/usr/local/opt/openjdk@11/"
+#export PATH="/usr/local/opt/openjdk@11/bin:$PATH"

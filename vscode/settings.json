@@ -1,0 +1,73 @@
+{
+  "leetcode.defaultLanguage" : "java",
+  "vim.hlsearch" : true,
+  "python.pythonPath" : "\/usr\/local\/bin\/python3",
+  "vim.leader" : "<space>",
+  "extensions.ignoreRecommendations" : true,
+  "vsintellicode.modify.editor.suggestSelection" : "automaticallyOverrodeDefaultValue",
+  "hediet.vscode-drawio.local-storage" : "eyIuZHJhd2lvLWNvbmZpZyI6IntcImxhbmd1YWdlXCI6XCJcIixcImN1c3RvbUZvbnRzXCI6W10sXCJsaWJyYXJpZXNcIjpcImdlbmVyYWxcIixcImN1c3RvbUxpYnJhcmllc1wiOltcIkwuc2NyYXRjaHBhZFwiXSxcInBsdWdpbnNcIjpbXSxcInJlY2VudENvbG9yc1wiOltdLFwiZm9ybWF0V2lkdGhcIjoyNDAsXCJjcmVhdGVUYXJnZXRcIjpmYWxzZSxcInBhZ2VGb3JtYXRcIjp7XCJ4XCI6MCxcInlcIjowLFwid2lkdGhcIjo4NTAsXCJoZWlnaHRcIjoxMTAwfSxcInNlYXJjaFwiOnRydWUsXCJzaG93U3RhcnRTY3JlZW5cIjp0cnVlLFwiZ3JpZENvbG9yXCI6XCIjZDBkMGQwXCIsXCJkYXJrR3JpZENvbG9yXCI6XCIjNmU2ZTZlXCIsXCJhdXRvc2F2ZVwiOnRydWUsXCJyZXNpemVJbWFnZXNcIjpudWxsLFwib3BlbkNvdW50ZXJcIjowLFwidmVyc2lvblwiOjE4LFwidW5pdFwiOjEsXCJpc1J1bGVyT25cIjpmYWxzZSxcInVpXCI6XCJcIn0ifQ==",
+  "vim.useCtrlKeys" : true,
+  "vim.handleKeys" : {
+    "<C-a>" : false,
+    "<C-f>" : false
+  },
+  "vim.useSystemClipboard" : true,
+  "vim.easymotion" : true,
+  "tabnine.experimentalAutoImports" : true,
+  "vim.insertModeKeyBindings" : [
+    {
+      "after" : [
+        "<Esc>"
+      ],
+      "before" : [
+        "j",
+        "k"
+      ]
+    }
+  ],
+  "workbench.iconTheme" : "material-icon-theme",
+  "files.exclude" : {
+    "**\/.project" : true,
+    "**\/.settings" : true,
+    "**\/.classpath" : true,
+    "**\/.factorypath" : true
+  },
+  "vim.normalModeKeyBindingsNonRecursive" : [
+    {
+      "after" : [
+        "d",
+        "d"
+      ],
+      "before" : [
+        "<leader>",
+        "d"
+      ]
+    },
+    {
+      "commands" : [
+        ":nohl"
+      ],
+      "before" : [
+        "<C-n>"
+      ]
+    }
+  ],
+  "editor.accessibilitySupport" : "off",
+  "workbench.colorTheme" : "Xcode Classic Dark",
+  "vim.incsearch" : true,
+  "vim.easymotionMarkerBackgroundColor" : "Green",
+  "hediet.vscode-drawio.theme" : "automatic",
+  "workbench.editorAssociations" : {
+    "*.ipynb" : "jupyter.notebook.ipynb"
+  },
+  "leetcode.workspaceFolder" : "\/Users\/hank.zhao\/.leetcode",
+  "editor.suggestSelection" : "first",
+  "python.defaultInterpreterPath" : "\/usr\/local\/bin\/python3",
+  "editor.renderWhitespace": "none",
+  "files.autoSave": "afterDelay",
+  "[javascript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "explorer.confirmDelete": false,
+  "svelte.enable-ts-plugin": true
+}

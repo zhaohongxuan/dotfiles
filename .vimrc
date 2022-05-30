@@ -17,12 +17,12 @@ Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'tpope/vim-surround'
 Plug 'easymotion/vim-easymotion'
 Plug 'bling/vim-airline'
-Plug 'theniceboy/vim-snippets'
 Plug 'junegunn/fzf.vim'
 Plug 'preservim/nerdtree'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
 Plug 'liuchengxu/space-vim-dark'
+Plug 'tyru/open-browser.vim'
+Plug 'aklt/plantuml-syntax'
+Plug 'weirongxu/plantuml-previewer.vim'
 
 
 call plug#end()
@@ -33,8 +33,6 @@ set t_Co=256
 "set cursorline
 set background=dark
 
-"colorscheme one
-"let g:airline_theme = 'one'
 " True Color Theme
 if exists('+termguicolors')
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
@@ -145,8 +143,8 @@ map <LEADER>l <C-W>l
 nnoremap <F2> :set nu! nu?<CR>
 nnoremap <F3> :set list! list?<CR>
 nnoremap <F4> :set wrap! wrap?<CR>
-" kj 替换 Esc
-inoremap kj <Esc>
+"jk 替换 Esc
+inoremap jk <Esc>
 
 " Swap implementations of ` and ' jump to markers
 " By default, ' jumps to the marked line, ` jumps to the marked line and

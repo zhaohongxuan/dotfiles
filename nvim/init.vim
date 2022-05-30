@@ -1,4 +1,3 @@
-
 "==========================================
 " Author:  zhaohongxuan
 " Version: 0.1
@@ -10,21 +9,16 @@ let mapleader = " "
 
 "Plugins  
 call plug#begin()
-Plug 'NLKNguyen/papercolor-theme'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'rakr/vim-one'
 Plug 'mhinz/vim-startify'
-Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'kristijanhusak/defx-icons'
 Plug 'tpope/vim-surround'
 Plug 'easymotion/vim-easymotion'
 Plug 'bling/vim-airline'
-Plug 'theniceboy/vim-snippets'
 Plug 'junegunn/fzf.vim'
-Plug 'preservim/nerdtree'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
+Plug 'udalov/kotlin-vim'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'liuchengxu/space-vim-dark'
+Plug 'xadillax/json-formatter.vim'
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 
 call plug#end()
@@ -37,7 +31,8 @@ set t_Co=256
 set background=dark
 
 "colorscheme one
-"let g:airline_theme = 'one'
+
+let g:airline_theme = 'violet'
 " True Color Theme
 if exists('+termguicolors')
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
@@ -45,9 +40,8 @@ if exists('+termguicolors')
   set termguicolors
 endif
 
-color PaperColor
-let g:airline_theme ='papercolor'
-let g:space_vim_dark_background = 233
+color space-vim-dark
+let g:space_vim_dark_background = 234
 
 
 let g:startify_bookmarks = [ {'c': '~/.vimrc'}, '~/.zshrc' ]
@@ -86,7 +80,6 @@ set showmode                    " display current modes
 set showmatch                   " jump to matches when entering parentheses
 set matchtime=2                 " tenths of a second to show the matching parenthesis
 
-
 " search
 set hlsearch                    " highlight searches
 set incsearch                   " do incremental searching, search as you type
@@ -113,7 +106,7 @@ set wildignore=*.o,*~,*.pyc,*.class
 
 "Gui setting
 
-set guifont=Menlo\ Regular:h12
+" set guifont=Menlo\ Regular:h12
 
 
 " Key Mapping 
@@ -132,6 +125,7 @@ noremap <Leader>y "*y
 noremap <Leader>p "*p
 vnoremap Y "+y
 
+inoremap jk <esc>
 
 nnoremap gev :w $MYVIMRC<CR>
 nnoremap gsv :so $MYVIMRC<CR>
@@ -151,8 +145,7 @@ nnoremap <silent> <Leader>f :Rg<CR>
 nnoremap <F2> :set nu! nu?<CR>
 nnoremap <F3> :set list! list?<CR>
 nnoremap <F4> :set wrap! wrap?<CR>
-" kj 替换 Esc
-inoremap kj <Esc>
+
 
 " Swap implementations of ` and ' jump to markers
 " By default, ' jumps to the marked line, ` jumps to the marked line and
@@ -191,6 +184,8 @@ noremap <LEADER><<down> :res -5<CR>
 noremap <LEADER><<left> :vertical resize-5<CR>
 noremap <LEADER><<right> :vertical resize+5<CR>
 
+nnoremap <LEADER>bj :call JsonFormatter()<cr>
+
 
 " ===
 " === Tab management
@@ -226,10 +221,6 @@ endfunction
 " <cr> could be remapped by other vim plugin, try `:verbose imap <CR>`.
 inoremap <silent><expr> <c-space> coc#refresh()
 
-" Use `[g` and `]g` to navigate diagnostics
-" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
@@ -266,85 +257,6 @@ nmap <leader>qf  <Plug>(coc-fix-current)
 " coc explorer
 nmap <space>e :CocCommand explorer<CR>
 
-
-"=================autocmd
-	    
-autocmd FileType defx call s:defx_my_settings()
-function! s:defx_my_settings() abort
-  " Define mappings
-  nnoremap <silent><buffer><expr> <CR> defx#do_action('drop')
- " nnoremap <silent><buffer><expr> <CR>
-  \ defx#do_action('open')
-  nnoremap <silent><buffer><expr> c
-  \ defx#do_action('copy')
-  nnoremap <silent><buffer><expr> m
-  \ defx#do_action('move')
-  nnoremap <silent><buffer><expr> p
-  \ defx#do_action('paste')
-  nnoremap <silent><buffer><expr> l
-  \ defx#do_action('open','vsplit')
-  nnoremap <silent><buffer><expr> E
-  \ defx#do_action('open', 'vsplit')
-  nnoremap <silent><buffer><expr> P
-  \ defx#do_action('preview')
-  nnoremap <silent><buffer><expr> o
-  \ defx#do_action('open_tree', 'toggle')
-  nnoremap <silent><buffer><expr> K
-  \ defx#do_action('new_directory')
-  nnoremap <silent><buffer><expr> N
-  \ defx#do_action('new_file')
-  nnoremap <silent><buffer><expr> M
-  \ defx#do_action('new_multiple_files')
-  nnoremap <silent><buffer><expr> C
-  \ defx#do_action('toggle_columns',
-  \                'mark:indent:icon:filename:type:size:time')
-  nnoremap <silent><buffer><expr> S
-  \ defx#do_action('toggle_sort', 'time')
-  nnoremap <silent><buffer><expr> d
-  \ defx#do_action('remove')
-  nnoremap <silent><buffer><expr> r
-  \ defx#do_action('rename')
-  nnoremap <silent><buffer><expr> !
-  \ defx#do_action('execute_command')
-  nnoremap <silent><buffer><expr> x
-  \ defx#do_action('execute_system')
-  nnoremap <silent><buffer><expr> yy
-  \ defx#do_action('yank_path')
-  nnoremap <silent><buffer><expr> .
-  \ defx#do_action('toggle_ignored_files')
-  nnoremap <silent><buffer><expr> ;
-  \ defx#do_action('repeat')
-  nnoremap <silent><buffer><expr> h
-  \ defx#do_action('cd', ['..'])
-  nnoremap <silent><buffer><expr> ~
-  \ defx#do_action('cd')
-  nnoremap <silent><buffer><expr> q
-  \ defx#do_action('quit')
-  nnoremap <silent><buffer><expr> <Space>
-  \ defx#do_action('toggle_select') . 'j'
-  nnoremap <silent><buffer><expr> *
-  \ defx#do_action('toggle_select_all')
-  nnoremap <silent><buffer><expr> j
-  \ line('.') == line('$') ? 'gg' : 'j'
-  nnoremap <silent><buffer><expr> k
-  \ line('.') == 1 ? 'G' : 'k'
-  nnoremap <silent><buffer><expr> <C-l>
-  \ defx#do_action('redraw')
-  nnoremap <silent><buffer><expr> <C-g>
-  \ defx#do_action('print')
-  nnoremap <silent><buffer><expr> cd
-  \ defx#do_action('change_vim_cwd')
-endfunction
-
-call defx#custom#option('_', {
-      \ 'winwidth': 30,
-      \ 'split': 'vertical',
-      \ 'direction': 'topleft',
-      \ 'show_ignored_files': 0,
-      \ 'buffer_name': '',
-      \ 'toggle': 1,
-      \ 'resume': 1
-      \ })
 
 autocmd VimEnter *
             \   if !argc()

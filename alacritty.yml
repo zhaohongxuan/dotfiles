@@ -329,7 +329,7 @@ background_opacity: 1.0
 # background_opacity: 0.80
 
 #selection:
-  #semantic_escape_chars: ",‚îÇ`|:\"' ()[]{}<>\t"
+  #semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
 
   # When set to `true`, selected text will be copied to the primary clipboard.
   #save_to_clipboard: false
@@ -341,7 +341,7 @@ background_opacity: 1.0
   # Cursor style
   #
   # Values for `style`:
-  #   - ‚ñá Block
+  #   - ▇ Block
   #   - _ Underline
   #   - | Beam
   #style: Block
@@ -585,3 +585,4 @@ key_bindings:
   - { key: PageDown,  mods: None,          action: ScrollPageDown, mode: ~Alt  }
   - { key: Home,      mods: Shift,         action: ScrollToTop,    mode: ~Alt  }
   - { key: End,       mods: Shift,         action: ScrollToBottom, mode: ~Alt  }
+
