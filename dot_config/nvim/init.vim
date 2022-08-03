@@ -18,6 +18,7 @@ Plug 'bling/vim-airline'
 Plug 'tpope/vim-fugitive'
 Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
 Plug 'arzg/vim-colors-xcode'
+Plug 'kyazdani42/nvim-web-devicons'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
