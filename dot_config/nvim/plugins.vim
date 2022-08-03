@@ -232,4 +232,13 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
 :nmap <space>b <Cmd>CocCommand explorer<CR>
 
+" settings for extension list
+let g:coc_global_extensions = [
+      \'coc-markdownlint',
+      \'coc-highlight',
+      \'coc-typescript',
+      \'coc-explorer',
+      \'coc-json'
+      \]
+
 
