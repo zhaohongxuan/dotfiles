@@ -1,0 +1,152 @@
+"==========================================
+" Author:  hank.zhao
+" Version: 0.1
+" Email: hxzhenu@gmai.com
+" Desc: my ideavim config file
+"==========================================
+" set leader key
+nnoremap <SPACE> <Nop>
+let mapleader = " "
+
+" search
+set hlsearch
+set incsearch
+set smartcase
+set ignorecase
+set showmode
+set de=on
+set scrolloff=5
+
+" plugins
+set ideamarks
+set easymotion
+set surround
+set argtextobj
+set multiple-cursors
+" Remap multiple-cursors shortcuts for Mac
+nmap <C-n> <Plug>NextWholeOccurrence
+xmap <C-n> <Plug>NextWholeOccurrence
+nmap <C-x> <Plug>SkipOccurrence
+xmap <C-x> <Plug>SkipOccurrence
+nmap <C-p> <Plug>RemoveOccurrence
+xmap <C-p> <Plug>RemoveOccurrence
+nmap <S-C-n> <Plug>AllWholeOccurrences
+xmap <S-C-n> <Plug>AllWholeOccurrences
+
+set exchange
+set highlightedyank
+set textobj-entire
+set keep-english-in-normal-and-restore-in-insert
+set NERDTree
+set ReplaceWithRegister
+" basic key mapping
+nnoremap L $
+vnoremap H ^
+nnoremap H ^
+vnoremap L $
+nnoremap ; :
+nnoremap ` ,
+
+inoremap jk <esc>
+" nerdtre
+map <leader>e :action SelectInProjectView<CR>
+nnoremap <leader>d :NERDTreeFocus<CR>
+
+
+""" Idea specific settings ------------------
+set ideajoin
+set idearefactormode=keep
+
+" clear the highlighted search result
+nnoremap <Leader>sc :nohlsearch<CR>
+
+" easymotion
+map <leader>f <Plug>(easymotion-s)
+
+
+" Window operation
+
+nnoremap <leader>ww <C-W>w
+nnoremap <leader>wd <C-W>c
+nnoremap <leader>wj <C-W>j
+nnoremap <leader>wk <C-W>k
+nnoremap <leader>wh <C-W>h
+nnoremap <leader>wl <C-W>l
+nnoremap <leader>ws <C-W>s
+nnoremap <leader>w- <C-W>s
+noremap <leader>wv <C-W>v
+nnoremap <leader>w\| <C-W>v
+
+" copy and paste
+noremap <Leader>y "*y
+noremap <Leader>p "*p
+noremap <Leader>P "0p
+vnoremap Y "+y
+
+" Tab operation
+nnoremap tn gt
+nnoremap tp gT
+
+" Insert mode shortcut
+inoremap <C-h> <Left>
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-l> <Right>
+inoremap <C-a> <Home>
+inoremap <C-e> <End>
+inoremap <C-d> <Delete>
+
+" Quit normal mode
+nnoremap <Space>q  :action CloseProject<CR>
+nnoremap <Space>Q  :qa!<CR>
+
+" edit vimrc
+nnoremap <leader>ve :e ~/.ideavimrc<CR>
+nnoremap <leader>vw :w!<CR>
+nnoremap <leader>vs :source ~/.ideavimrc<CR>
+
+" intellij built in key map
+
+nnoremap <leader>a :action GotoAction<CR>
+nnoremap <leader>b :action Bookmarks<CR>
+nnoremap <leader>c :action GotoClass<CR>
+"nnoremap <leader>e :action SearchEverywhere<CR>
+"nnoremap <leader>f :action FindInPath<CR>
+nnoremap <leader>gc :action Git.CompareWithBranch<CR>
+nnoremap <leader>ga :action Annotate<CR>
+nnoremap <leader>gh :action Vcs.ShowTabbedFileHistory<CR>
+nnoremap <leader>nj :action NewClass<CR>
+nnoremap <leader>nt :action Kotlin.NewFile<CR>
+nnoremap <leader>r :action RecentFiles<CR>
+
+" build and compile code
+nnoremap <leader>mr :action Maven.Reimport<CR>
+
+"toggle something
+"toggle track vim action Id
+nnoremap ta :action VimFindActionIdAction<CR>
+
+" run and debug
+nnoremap ,d :action Debug<CR>
+nnoremap ,r :action Run<CR>
+nnoremap ,c :action CompileDirty<CR>
+nnoremap ,b :action ToggleLineBreakpoint<CR>
+nnoremap ,v :action ViewBreakpoints<CR>
+nnoremap ,s :action Stop<CR>
+
+" navigation
+nnoremap gs :action GotoSuperMethod<CR>
+nnoremap gb :action JumpToLastChange<CR>
+nnoremap gi :action GotoImplementation<CR>
+nnoremap gd :action GotoDeclaration<CR>
+nnoremap gf :action FileStructurePopup<CR>
+
+" code actions
+nnoremap U :action FindUsages<CR>
+nnoremap R :action RenameElement<CR>
+nnoremap == :action ReformatCode<CR>
+vnoremap = :action ReformatCode<CR>
+nnoremap -- :action OptimizeImports<CR>
+nnoremap cc :action CommentByLineComment<CR>
+vnoremap cc :action CommentByLineComment<CR>
+" Test 
