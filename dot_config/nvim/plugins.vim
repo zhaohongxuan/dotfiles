@@ -236,7 +236,6 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 let g:coc_global_extensions = [
       \'coc-markdownlint',
       \'coc-highlight',
-      \'coc-typescript',
       \'coc-explorer',
       \'coc-json'
       \]

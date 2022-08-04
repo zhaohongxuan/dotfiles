@@ -9,6 +9,7 @@ let mapleader = " "
 
 "Plugins  
 call plug#begin()
+Plug 'ryanoasis/vim-devicons'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'mhinz/vim-startify'
 Plug 'tpope/vim-surround'
@@ -18,8 +19,8 @@ Plug 'bling/vim-airline'
 Plug 'tpope/vim-fugitive'
 Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
 Plug 'arzg/vim-colors-xcode'
-Plug 'kyazdani42/nvim-web-devicons'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 
 call plug#end()
 

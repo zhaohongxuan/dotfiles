@@ -1,3 +1,5 @@
+set encoding=UTF-8
+
 " always splitright
 set splitright
 " theme 
