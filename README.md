@@ -1,4 +1,4 @@
-# My Personal dot_files Managed by chezmoi 🤖
+# My Personal dotfiles Managed by chezmoi 🤖
 
 This repo contains all my dotfiles managed by [chezmoi](https://github.com/twpayne/chezmoi), you can fork and edit before use it.
 
@@ -9,8 +9,6 @@ This repo contains all my dotfiles managed by [chezmoi](https://github.com/twpay
 3. use `chezmoi init https://github.com/username/dotfiles.git` to init dotfiles
 4. use `chezmoi apply -v` to make all dotfiles take effect. if you just want to apply one config file,
    let's take .zshrc for example, just use `chezmoi appy -v .zshrc`
-
-⚠️ Note. before truely used, you need to prepare some requirements, like nvim.
 
 ## neovim
 
