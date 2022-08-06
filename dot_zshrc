@@ -113,4 +113,4 @@ export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 #export PATH="/usr/local/opt/openjdk@11/bin:$PATH"
 
 alias gcf='git checkout $( git branch | fzf)'
-# new line
+alias cm='chezmoi'
