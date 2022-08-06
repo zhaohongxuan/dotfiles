@@ -1,0 +1,25 @@
+{{ if eq .chezmoi.os "linux" -}}
+#!/bin/sh
+#sudo apt install ripgrep
+{{ else if eq .chezmoi.os "darwin" -}}
+#!/bin/sh
+
+brew install zsh
+brew install neovim
+brew install node
+brew install fzf
+brew install ripgrep
+
+# cask install
+brew tap homebrew/cask-fonts
+brew install --cask font-jetbrains-mono
+brew install --cask font-hack-nerd-font
+brew install --cask font-fira-code
+
+brew install --cask wezterm
+brew install --cask kitty
+brew install --cask visual-studio-code
+brew install --cask postman
+brew install --cask spotify
+brew install --cask obsidian
+{{ end -}}
