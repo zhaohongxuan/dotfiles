@@ -21,6 +21,8 @@ Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
 Plug 'arzg/vim-colors-xcode'
 Plug 'airblade/vim-gitgutter'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'karb94/neoscroll.nvim'
+Plug 'sbdchd/neoformat'
 
 
 call plug#end()
