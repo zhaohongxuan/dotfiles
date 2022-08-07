@@ -10,7 +10,27 @@ This repo contains all my dotfiles managed by [chezmoi](https://github.com/twpay
 4. use `chezmoi apply -v` to make all dotfiles take effect. if you just want to apply one config file,
    let's take .zshrc for example, just use `chezmoi appy -v .zshrc`
 
-## neovim
+## Neovim configuration
+
+### Features
++ Plug management via [vim-plug](https://github.com/junegunn/vim-plug).
++ Code, snippet, LSP, completion via [coc-nvim](https://github.com/neoclide/coc.nvim).
++ Git integration via [vim-fugitive](https://github.com/tpope/vim-fugitive).
++ Better escaping from insert mode via [better-escape.vim](https://github.com/jdhao/better-escape.vim).
++ Fuzzy File searching via [LeaderF](https://github.com/Yggdroot/LeaderF).
++ Code commenting via [vim-commentary](https://github.com/tpope/vim-commentary).
++ Fuzzy code search with [EasyMotion](https://github.com/easymotion/vim-easymotion).
++ File tree explorer via [coc-explorer](https://github.com/weirongxu/coc-explorer).
++ Beautiful statusline via [vim-airline](https://github.com/vim-airline/vim-airline).
++ Beautiful start page via [vim-startify](https://github.com/mhinz/vim-startify).
+
++ Code formatting via [Neoformat](https://github.com/sbdchd/neoformat).
++ Smooth scroll experience via [neoscroll](https://github.com/karb94/neoscroll.nvim).
+
+
+### Screenshot
+<img width="1476" alt="image" src="https://user-images.githubusercontent.com/8613196/183276822-d595cb3c-e093-4025-b9ad-2ab762fed0e3.png">
+
 
 ### Pre-requisite
 
