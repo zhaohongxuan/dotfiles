@@ -23,7 +23,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'karb94/neoscroll.nvim'
 Plug 'sbdchd/neoformat'
-
+Plug 'kdheepak/lazygit.nvim'
 
 call plug#end()
 
