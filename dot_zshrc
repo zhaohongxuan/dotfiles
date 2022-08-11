@@ -108,8 +108,8 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 alias vim="nvim"
 #eval "$(starship init zsh)"
 export PATH="/Users/hank.zhao/Developer/git-fuzzy/bin:$PATH"
-export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
-#export JAVA_HOME="/usr/local/opt/openjdk@11/"
+#export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+export JAVA_HOME="/usr/local/opt/openjdk@11/"
 #export PATH="/usr/local/opt/openjdk@11/bin:$PATH"
 
 alias gcf='git checkout $( git branch | fzf)'

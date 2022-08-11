@@ -21,8 +21,8 @@ Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
 Plug 'arzg/vim-colors-xcode'
 Plug 'airblade/vim-gitgutter'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'karb94/neoscroll.nvim'
 Plug 'sbdchd/neoformat'
+Plug 'karb94/neoscroll.nvim'
 Plug 'kdheepak/lazygit.nvim'
 
 call plug#end()
@@ -38,4 +38,5 @@ for s:fname in s:conf_files
   execute printf('source %s/%s', stdpath('config'), s:fname)
 endfor
 
+lua require('neoscroll').setup()
 

@@ -74,3 +74,6 @@ noremap <LEADER>sw :set wrap<CR>
 noremap <LEADER>/ :set splitbelow<CR>:split<CR>:res +10<CR>:term<CR>
 " setup mapping to call :LazyGit
 nnoremap <silent> <leader>gg :LazyGit<CR>
+
+" setup mapping to call startify
+nnoremap <silent> <leader>vv :Startify<CR>
