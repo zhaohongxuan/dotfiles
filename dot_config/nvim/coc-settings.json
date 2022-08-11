@@ -42,6 +42,7 @@
 		"value": "\uf89f",
 		"variable": "\ue71b"
 	},
+	"java.jdt.ls.vmargs": "-javaagent:/Users/hank.zhao/Developer/java/lombok.jar",
 	"suggest.floatEnable": true,
 	"diagnostic.signOffset": 1,
 	"diagnostic.errorSign": "\uf467",

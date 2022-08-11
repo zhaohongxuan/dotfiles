@@ -15,8 +15,10 @@ vnoremap Y "+y
 
 inoremap jk <esc>
 
-nnoremap <LEADER>ve :e $MYVIMRC<CR>
-nnoremap <LEADER>vw :w!<CR>
+" nnoremap <LEADER>ve :e $MYVIMRC<CR>
+" nnoremap <LEADER>vw :w!<CR>
+nnoremap <LEADER>ve :e ~/.local/share/chezmoi/dot_config/nvim/init.vim<CR>
+nnoremap <LEADER>vw :! chezmoi apply<CR>
 nnoremap <LEADER>vs :so $MYVIMRC<CR>
 
 nnoremap k gk

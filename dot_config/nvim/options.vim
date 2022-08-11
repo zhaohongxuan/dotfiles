@@ -8,8 +8,6 @@ set t_Co=256
 "set cursorline
 set background=dark
 
-"colorscheme one
-
 let g:airline_theme = 'violet'
 " True Color Theme
 if exists('+termguicolors')
@@ -18,7 +16,13 @@ if exists('+termguicolors')
   set termguicolors
 endif
 
-color xcodedarkhc
+colorscheme space-vim-dark
+hi Normal     ctermbg=NONE guibg=NONE
+hi LineNr     ctermbg=NONE guibg=NONE
+hi SignColumn ctermbg=NONE guibg=NONE
+
+let g:space_vim_dark_background = 200
+
 
 let g:startify_bookmarks = [ {'c': '~/.vimrc'}, '~/.zshrc' ]
 " history : how many lines of history VIM has to remember

@@ -18,11 +18,10 @@ Plug 'tpope/vim-commentary'
 Plug 'bling/vim-airline'
 Plug 'tpope/vim-fugitive'
 Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
-Plug 'arzg/vim-colors-xcode'
+Plug 'liuchengxu/space-vim-dark'
 Plug 'airblade/vim-gitgutter'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'sbdchd/neoformat'
-Plug 'karb94/neoscroll.nvim'
 Plug 'kdheepak/lazygit.nvim'
 
 call plug#end()
@@ -37,6 +36,4 @@ let s:conf_files = [
 for s:fname in s:conf_files
   execute printf('source %s/%s', stdpath('config'), s:fname)
 endfor
-
-lua require('neoscroll').setup()
 
