@@ -23,6 +23,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'sbdchd/neoformat'
 Plug 'kdheepak/lazygit.nvim'
+Plug 'Pocco81/auto-save.nvim'
 
 call plug#end()
 
@@ -37,3 +38,10 @@ for s:fname in s:conf_files
   execute printf('source %s/%s', stdpath('config'), s:fname)
 endfor
 
+" Lua config
+lua << EOF
+	require("auto-save").setup {
+		-- your config goes here
+		-- or just leave it empty :)
+	}
+EOF
