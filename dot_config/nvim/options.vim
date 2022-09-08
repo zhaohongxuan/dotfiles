@@ -81,7 +81,7 @@ set wildmode=longest,list,full
 set wildignore=*.o,*~,*.pyc,*.class
 
 "Gui setting
-set guifont=JetBrains\ Mono:h12
+set guifont=JetBrainsMono\ Nerd\ Font:h12
 
 let g:lazygit_floating_window_winblend = 0 " transparency of floating window
 let g:lazygit_floating_window_scaling_factor = 0.9 " scaling factor for floating window
