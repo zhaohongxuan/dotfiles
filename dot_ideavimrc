@@ -109,8 +109,7 @@ nnoremap <leader>vs :source ~/.ideavimrc<CR>
 nnoremap <leader>a :action GotoAction<CR>
 nnoremap <leader>b :action Bookmarks<CR>
 nnoremap <leader>c :action GotoClass<CR>
-"nnoremap <leader>e :action SearchEverywhere<CR>
-"nnoremap <leader>f :action FindInPath<CR>
+nnoremap <leader>s :action SearchEverywhere<CR>
 nnoremap <leader>gc :action Git.CompareWithBranch<CR>
 nnoremap <leader>ga :action Annotate<CR>
 nnoremap <leader>gh :action Vcs.ShowTabbedFileHistory<CR>
