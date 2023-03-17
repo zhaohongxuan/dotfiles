@@ -14,7 +14,6 @@ set incsearch
 set smartcase
 set ignorecase
 set showmode
-set de=on
 set scrolloff=5
 
 " plugins
@@ -115,8 +114,6 @@ nnoremap <leader>c :action GotoClass<CR>
 nnoremap <leader>gc :action Git.CompareWithBranch<CR>
 nnoremap <leader>ga :action Annotate<CR>
 nnoremap <leader>gh :action Vcs.ShowTabbedFileHistory<CR>
-nnoremap <leader>nj :action NewClass<CR>
-nnoremap <leader>nt :action Kotlin.NewFile<CR>
 nnoremap <leader>r :action RecentFiles<CR>
 
 " build and compile code
