@@ -13,6 +13,8 @@ return {
 
 
   window_background_opacity = 0.90,
+  initial_cols = 150,
+  initial_rows = 40,
 
   -- Font configuration
   -- https://wezfurlong.org/wezterm/config/fonts.html

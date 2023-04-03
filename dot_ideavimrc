@@ -22,6 +22,12 @@ set easymotion
 set surround
 set argtextobj
 set multiple-cursors
+set textobj-entire
+set vim-paragraph-motion
+set textobj-indent
+set matchit
+
+
 " Remap multiple-cursors shortcuts for Mac
 nmap <C-n> <Plug>NextWholeOccurrence
 xmap <C-n> <Plug>NextWholeOccurrence
@@ -40,9 +46,9 @@ set NERDTree
 set ReplaceWithRegister
 " basic key mapping
 nnoremap L $
+vnoremap L $
 vnoremap H ^
 nnoremap H ^
-vnoremap L $
 nnoremap ; :
 nnoremap ` ,
 
@@ -57,7 +63,7 @@ set ideajoin
 set idearefactormode=keep
 
 " clear the highlighted search result
-nnoremap <Leader>sc :nohlsearch<CR>
+" nnoremap <Leader>sc :nohlsearch<CR>
 
 " easymotion
 map <leader>f <Plug>(easymotion-s)
@@ -70,6 +76,7 @@ nnoremap <leader>wd <C-W>c
 nnoremap <leader>wj <C-W>j
 nnoremap <leader>wk <C-W>k
 nnoremap <leader>wh <C-W>h
+
 nnoremap <leader>wl <C-W>l
 nnoremap <leader>ws <C-W>s
 nnoremap <leader>w- <C-W>s
