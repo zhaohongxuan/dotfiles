@@ -113,6 +113,7 @@ export JAVA_HOME="/usr/local/opt/openjdk@11/"
 #export PATH="/usr/local/opt/openjdk@11/bin:$PATH"
 
 alias gcf='git checkout $( git branch | fzf)'
+alias gcfr='git checkout $(git branch -r | fzf | sed "s/origin\///")'
 alias cm='chezmoi'
 
 # fd - cd to selected directory
