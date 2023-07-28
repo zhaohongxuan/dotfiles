@@ -6,10 +6,6 @@ return {
 
   -- Color scheme
   -- https://wezfurlong.org/wezterm/config/appearance.html
-  --
-  -- Dracula
-  -- https://draculatheme.com
-  color_scheme = "XCode Dusk (base16)",
 
 
   window_background_opacity = 1,
