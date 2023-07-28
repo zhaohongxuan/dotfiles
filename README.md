@@ -2,7 +2,8 @@
 
 This repo contains all my dotfiles managed by [chezmoi](https://github.com/twpayne/chezmoi), Chezmoi manage dotfile start with `dot_` prefix instead of `.`  for example,
 the `.zshrc` will be `dot_zshrc` in chezmoi, so if you don't want use chezmoi, just rename the `dot_` config file to real `.` file, you can fork and edit before use it.
-PS. nvim dotfiles were migrated to https://github.com/zhaohongxuan/nvim
+
+**PS.** nvim dotfiles were migrated to https://github.com/zhaohongxuan/nvim
 
 ## How to Usage
 1. install [chezmoi](https://github.com/twpayne/chezmoi) first, if you use mac, simply `brew install chezmoi`
