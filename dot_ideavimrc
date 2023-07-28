@@ -109,7 +109,7 @@ nnoremap <Space>Q  :qa!<CR>
 " edit vimrc
 nnoremap <leader>ve :e ~/.ideavimrc<CR>
 nnoremap <leader>vw :w!<CR>
-nnoremap <leader>vs :source ~/.ideavimrc<CR>
+nnoremap <leader>vs :action IdeaVim.ReloadVimRc.reload<CR>
 
 " intellij built in key map
 
@@ -147,7 +147,8 @@ nnoremap gf :action FileStructurePopup<CR>
 " code actions
 nnoremap U :action FindUsages<CR>
 nnoremap R :action RenameElement<CR>
-nnoremap == :action ReformatCode<CR>
+
+nnoremap == :action ReformatCode<CR>:action OptimizeImports<CR>
 vnoremap = :action ReformatCode<CR>
 nnoremap -- :action OptimizeImports<CR>
 nnoremap cc :action CommentByLineComment<CR>

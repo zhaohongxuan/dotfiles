@@ -12,7 +12,7 @@ return {
   color_scheme = "XCode Dusk (base16)",
 
 
-  window_background_opacity = 0.90,
+  window_background_opacity = 1,
   initial_cols = 150,
   initial_rows = 40,
 
