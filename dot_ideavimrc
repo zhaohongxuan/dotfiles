@@ -1,6 +1,4 @@
 "==========================================
-" Author:  hank.zhao
-" Version: 0.1
 " Email: hxzhenu@gmai.com
 " Desc: my ideavim config file
 "==========================================
@@ -53,9 +51,14 @@ nnoremap ; :
 nnoremap ` ,
 
 inoremap jk <esc>
-" nerdtre
+
+" nerdtree
+" override default keymap
+let g:NERDTreeMapCloseDir = 'h'
+let g:NERDTreeMapActivateNode = 'l'
+
 map <leader>e :action SelectInProjectView<CR>
-nnoremap <leader>d :NERDTreeFocus<CR>
+map <leader>r :NERDTreeFocus<CR>
 
 
 """ Idea specific settings ------------------
