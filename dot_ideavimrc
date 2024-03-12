@@ -121,6 +121,7 @@ nnoremap <leader>b :action Bookmarks<CR>
 nnoremap <leader>c :action GotoClass<CR>
 nnoremap <leader>s :action SearchEverywhere<CR>
 nnoremap <leader>gc :action Git.CompareWithBranch<CR>
+nnoremap <leader>gb :action Git.Branches<CR>
 nnoremap <leader>ga :action Annotate<CR>
 nnoremap <leader>gh :action Vcs.ShowTabbedFileHistory<CR>
 nnoremap <leader>r :action RecentFiles<CR>
@@ -156,4 +157,3 @@ vnoremap = :action ReformatCode<CR>
 nnoremap -- :action OptimizeImports<CR>
 nnoremap cc :action CommentByLineComment<CR>
 vnoremap cc :action CommentByLineComment<CR>
-" Test 
