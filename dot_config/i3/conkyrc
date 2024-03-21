@@ -1,0 +1,33 @@
+out_to_x no
+out_to_console yes
+background no
+double_buffer no
+update_interval 1
+total_run_times 0
+override_utf8_locale no
+short_units yes
+if_up_strictness address
+cpu_avg_samples 2
+
+TEXT
+[
+#{ "full_text" : "\uf17c", "color": "\#BADA55"},
+#{ "full_text" : "\uf2be ${exec uname -n}", "color": "\#BADA55"},
+#{ "full_text": "  ${exec curl -s www.icanhazip.com}"},
+{ "full_text" : ${if_up enp0s25}" ${upspeed enp0s25}/s _ ${downspeed enp0s25}/s"${else}""${endif}, "color" : "\#94F397" },
+{ "full_text" : ${if_up wlp3s0}"\uf1eb ${wireless_link_qual_max wlp3s0}%[${wireless_essid wlp3s0}][${addr wlp3s0}]\uf0aa ${upspeed wlp3s0}/s \uf0ab ${downspeed wlp3s0}/s"${else}""${endif}, "color" : "\#94F397" },
+{ "full_text" : "\uf17b ${cpu cpu0}%" , "color" : "\#8BC3E7" },
+{ "full_text" : "\uf145 ${mem}" , "color" : "\#B987D9" },
+# { "full_text" : "\uf0a0 ${fs_used_perc /}%" , "color" : "\#FF9D17" },
+
+{ "full_text" : "  ${time %Y/%m/%d %a}" , "color" : "\#ff797b" },
+{ "full_text" : "\uf017 ${time %H:%M:%S}" , "color" : "\#8BADF9" },
+{"full_text":"${if_match "${exec ps -ef | grep sslocal | wc -l}"=="3"}\uf1d8","color":"\#0048ff"},\
+{"full_text":"${else}"},
+{"full_text":"${if_match "${exec ps -ef | grep sslocal | wc -l}"=="2"}\uf1d9","color":"\#0048ff"},
+{"full_text":"${endif}"},
+
+{"full_text":"${if_match ${exec checkupdates | wc -l}>0} ${exec checkupdates | wc -l}","color":"\#66ff66","separator":false,"separator_block_width":6},\
+{"full_text":"${endif}"}
+],
+
