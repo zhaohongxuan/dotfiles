@@ -1,37 +1,119 @@
 local wezterm = require 'wezterm'
 
-return {
-  -- Smart tab bar [distraction-free mode]
-  hide_tab_bar_if_only_one_tab = true,
-
-  -- Color scheme
-  -- https://wezfurlong.org/wezterm/config/appearance.html
+local config = wezterm.config_builder()
 
 
-  window_background_opacity = 1,
-  initial_cols = 150,
-  initial_rows = 40,
+config.hide_tab_bar_if_only_one_tab = true
+config.window_background_opacity    = 0.8
+config.initial_cols                 = 150
+config.initial_rows                 = 40
 
-  -- Font configuration
-  -- https://wezfurlong.org/wezterm/config/fonts.html
-  font = wezterm.font('JetBrains Mono'),
-  font_size = 12.0,
+config.font                         = wezterm.font('Cascadia Code')
+config.font_size                    = 12
+config.enable_scroll_bar            = true
+config.use_fancy_tab_bar            = false
 
-  -- Disable ligatures
-  -- https://wezfurlong.org/wezterm/config/font-shaping.html
-  harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' },
 
-  leader = { key = 'a', mods = 'CMD', timeout_milliseconds = 1000 },
-  keys = {
-    {
-      key = '|',
-      mods = 'LEADER|SHIFT',
-      action = wezterm.action.SplitHorizontal { domain = 'CurrentPaneDomain' },
-    },
-    {
-      key = '-',
-      mods = 'LEADER',
-      action = wezterm.action.SplitVertical { domain = 'CurrentPaneDomain' },
-    },
-  },
+local act = wezterm.action
+
+local mod = {
+    SUPER = "SUPER",
+    SUPER_REV = 'SUPER|SHIFT',
+    OPT = 'OPT',
 }
+
+config.leader = { key = 'a', mods = 'CTRL' }
+config.mouse_bindings = {
+    {
+        event = { Up = { streak = 1, button = 'Left' } },
+        mods = 'CTRL',
+        action = act.OpenLinkAtMouseCursor,
+    },
+}
+config.key_tables = {
+    resize_pane = {
+        { key = 'k',      action = act.AdjustPaneSize({ 'Up', 1 }) },
+        { key = 'j',      action = act.AdjustPaneSize({ 'Down', 1 }) },
+        { key = 'h',      action = act.AdjustPaneSize({ 'Left', 1 }) },
+        { key = 'l',      action = act.AdjustPaneSize({ 'Right', 1 }) },
+        { key = 'Escape', action = 'PopKeyTable' },
+        { key = 'q',      action = 'PopKeyTable' },
+    },
+}
+
+config.keys = {
+    -- panes: split panes
+    {
+        key = [[\]],
+        mods = mod.SUPER,
+        action = wezterm.action.SplitHorizontal { domain = 'CurrentPaneDomain' },
+    },
+    {
+        key = [[\]],
+        mods = mod.SUPER_REV,
+        action = wezterm.action.SplitVertical { domain = 'CurrentPaneDomain' },
+    },
+
+
+    -- panes: zoom+close pane
+    { key = 'Enter',      mods = mod.SUPER, action = act.TogglePaneZoomState },
+    { key = 'w',          mods = mod.SUPER, action = act.CloseCurrentPane({ confirm = false }) },
+
+    -- panes: navigation
+    { key = 'k',          mods = 'LEADER',  action = act.ActivatePaneDirection('Up') },
+    { key = 'j',          mods = 'LEADER',  action = act.ActivatePaneDirection('Down') },
+    { key = 'h',          mods = 'LEADER',  action = act.ActivatePaneDirection('Left') },
+    { key = 'l',          mods = 'LEADER',  action = act.ActivatePaneDirection('Right') },
+
+    { key = 'UpArrow',    mods = mod.OPT,   action = act.ActivatePaneDirection('Up') },
+    { key = 'DownArrow',  mods = mod.OPT,   action = act.ActivatePaneDirection('Down') },
+    { key = 'LeftArrow',  mods = mod.OPT,   action = act.ActivatePaneDirection('Left') },
+    { key = 'RightArrow', mods = mod.OPT,   action = act.ActivatePaneDirection('Right') },
+
+    -- panes: resize_pane
+    {
+        key = 'p',
+        mods = 'LEADER',
+        action = act.ActivateKeyTable({
+            name = 'resize_pane',
+            one_shot = false,
+            timemout_miliseconds = 1000,
+        }),
+    },
+
+    {
+        key = 'p',
+        mods = mod.SUPER,
+        action = act.ActivateCommandPalette
+    },
+    {
+        key = 'u',
+        mods = mod.SUPER,
+        action = wezterm.action.QuickSelectArgs({
+            label = 'open url',
+            patterns = {
+                '\\((https?://\\S+)\\)',
+                '\\[(https?://\\S+)\\]',
+                '\\{(https?://\\S+)\\}',
+                '<(https?://\\S+)>',
+                '\\bhttps?://\\S+[)/a-zA-Z0-9-]+'
+            },
+            action = wezterm.action_callback(function(window, pane)
+                local url = window:get_selection_text_for_pane(pane)
+                wezterm.log_info('opening: ' .. url)
+                wezterm.open_with(url)
+            end),
+        }),
+    },
+
+    -- tabs: navigation
+    { key = '[',     mods = mod.SUPER,     action = act.ActivateTabRelative(-1) },
+    { key = ']',     mods = mod.SUPER,     action = act.ActivateTabRelative(1) },
+    { key = '[',     mods = mod.SUPER_REV, action = act.MoveTabRelative(-1) },
+    { key = ']',     mods = mod.SUPER_REV, action = act.MoveTabRelative(1) },
+
+    -- copy mode
+    { key = 'Enter', mods = mod.SUPER_REV, action = 'ActivateCopyMode' },
+}
+
+return config
