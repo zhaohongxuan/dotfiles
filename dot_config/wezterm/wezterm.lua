@@ -26,7 +26,7 @@ config.leader = { key = 'a', mods = 'CTRL' }
 config.mouse_bindings = {
     {
         event = { Up = { streak = 1, button = 'Left' } },
-        mods = 'CTRL',
+        mods = mod.SUPER,
         action = act.OpenLinkAtMouseCursor,
     },
 }
