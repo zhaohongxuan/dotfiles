@@ -1,10 +1,9 @@
-local wezterm = require 'wezterm'
+local wezterm                       = require 'wezterm'
 
-local config = wezterm.config_builder()
-
+local config                        = wezterm.config_builder()
 
 config.hide_tab_bar_if_only_one_tab = true
-config.window_background_opacity    = 0.8
+config.window_background_opacity    = 0.85
 config.initial_cols                 = 150
 config.initial_rows                 = 40
 
@@ -12,25 +11,26 @@ config.font                         = wezterm.font('Cascadia Code')
 config.font_size                    = 12
 config.enable_scroll_bar            = true
 config.use_fancy_tab_bar            = false
+config.tab_bar_at_bottom            = true
+config.window_decorations           = 'RESIZE'
 
+local act                           = wezterm.action
 
-local act = wezterm.action
-
-local mod = {
+local mod                           = {
     SUPER = "SUPER",
     SUPER_REV = 'SUPER|SHIFT',
     OPT = 'OPT',
 }
 
-config.leader = { key = 'a', mods = 'CTRL' }
-config.mouse_bindings = {
+config.leader                       = { key = 'a', mods = 'CTRL' }
+config.mouse_bindings               = {
     {
         event = { Up = { streak = 1, button = 'Left' } },
         mods = mod.SUPER,
         action = act.OpenLinkAtMouseCursor,
     },
 }
-config.key_tables = {
+config.key_tables                   = {
     resize_pane = {
         { key = 'k',      action = act.AdjustPaneSize({ 'Up', 1 }) },
         { key = 'j',      action = act.AdjustPaneSize({ 'Down', 1 }) },
@@ -41,7 +41,7 @@ config.key_tables = {
     },
 }
 
-config.keys = {
+config.keys                         = {
     -- panes: split panes
     {
         key = [[\]],
