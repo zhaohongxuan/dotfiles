@@ -12,15 +12,13 @@ the `.zshrc` will be `dot_zshrc` in chezmoi, so if you don't want use chezmoi, j
 4. use `chezmoi apply -v` to make all dotfiles take effect. if you just want to apply one config file,
    let's take .zshrc for example, just use `chezmoi appy -v .zshrc`
 
-## Ideavim
-
-1. if you use chezmoi, simple use `chezmoi apply -v .ideavimrc` to make it effect, or you can just copy this `.ideavimrc` to your home dictory
-2. enable `ideavim plugin` in your Jetbrain IDE like Intellij IDEA or Pycharm etc.
-3. you can watch my tutorial video in bilibili to get more information:[ideavim插件的配置和使用](https://www.bilibili.com/video/BV1p541157Va)
-
 ## wezterm
 
-I use wezterm as my primary terminal emulator.
+I use wezterm as my primary terminal emulator which is super fast, and lua is friendly for configuration.
+
+Screenshot:
+
+<img width="1368" alt="image" src="https://github.com/zhaohongxuan/dotfiles/assets/8613196/595e359d-45ad-4949-926a-d56a19135daa">
 
 ### key bindings
 
@@ -44,12 +42,12 @@ Mod Key (macOS):
 
 `Leader` + `any key`  means  stoke `Leader` first and then the arbitrary key.
 
-| Keys                                  | Action                    |
-| ------------------------------------- | ------------------------- |
-| `Leader` +`k`  or `OPT` +`UpArrow`    | Move cursor to Up Pane    |
-| `Leader` +`j`  or `OPT` +`DownArrow`  | Move cursor to Down Pane  |
-| `Leader` +`h`  or `OPT` +`LeftArrow`  | Move cursor to Left Pane  |
-| `Leader` +`l`  or `OPT` +`RightArrow` | Move cursor to Right Pane |
+| Keys           | Action                    |
+| -------------- | ------------------------- |
+| `Leader` +`k`  | Move cursor to Up Pane    |
+| `Leader` +`j`  | Move cursor to Down Pane  |
+| `Leader` +`h`  | Move cursor to Left Pane  |
+| `Leader` +`l`  | Move cursor to Right Pane |
 
 #### Pane Resize 
 
@@ -80,6 +78,13 @@ Use `Leader + p` to active Pane Resize Mode
 | `SUPER` + `u`         | Show all  url candidates  in current Pane |
 | `SUPER` + `p`         | Active Command Palette like VSCode        |
 | `SUPER_REV` + `Enter` | Active Copy Mode                          |
+| `OPT` + `,`     | Open Wezterm config using nvim in new tab |
+
+## Ideavim
+
+1. if you use chezmoi, simple use `chezmoi apply -v .ideavimrc` to make it effect, or you can just copy this `.ideavimrc` to your home dictory
+2. enable `ideavim plugin` in your Jetbrain IDE like Intellij IDEA or Pycharm etc.
+3. you can watch my tutorial video in bilibili to get more information:[ideavim插件的配置和使用](https://www.bilibili.com/video/BV1p541157Va)
 
 
 ## tmux
