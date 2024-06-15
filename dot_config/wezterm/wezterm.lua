@@ -57,14 +57,14 @@ config.keys                         = {
 
 
     -- panes: zoom+close pane
-    { key = 'Enter',      mods = mod.SUPER, action = act.TogglePaneZoomState },
-    { key = 'w',          mods = mod.SUPER, action = act.CloseCurrentPane({ confirm = false }) },
+    { key = 'Enter', mods = mod.SUPER, action = act.TogglePaneZoomState },
+    { key = 'w',     mods = mod.SUPER, action = act.CloseCurrentPane({ confirm = false }) },
 
     -- panes: navigation
-    { key = 'k',          mods = 'LEADER',  action = act.ActivatePaneDirection('Up') },
-    { key = 'j',          mods = 'LEADER',  action = act.ActivatePaneDirection('Down') },
-    { key = 'h',          mods = 'LEADER',  action = act.ActivatePaneDirection('Left') },
-    { key = 'l',          mods = 'LEADER',  action = act.ActivatePaneDirection('Right') },
+    { key = 'k',     mods = 'LEADER',  action = act.ActivatePaneDirection('Up') },
+    { key = 'j',     mods = 'LEADER',  action = act.ActivatePaneDirection('Down') },
+    { key = 'h',     mods = 'LEADER',  action = act.ActivatePaneDirection('Left') },
+    { key = 'l',     mods = 'LEADER',  action = act.ActivatePaneDirection('Right') },
 
     -- panes: resize_pane
     {
@@ -103,10 +103,29 @@ config.keys                         = {
     },
 
     -- tabs: navigation
-    { key = '[',     mods = mod.SUPER,     action = act.ActivateTabRelative(-1) },
-    { key = ']',     mods = mod.SUPER,     action = act.ActivateTabRelative(1) },
-    { key = '[',     mods = mod.SUPER_REV, action = act.MoveTabRelative(-1) },
-    { key = ']',     mods = mod.SUPER_REV, action = act.MoveTabRelative(1) },
+    { key = '[', mods = mod.SUPER,     action = act.ActivateTabRelative(-1) },
+    { key = ']', mods = mod.SUPER,     action = act.ActivateTabRelative(1) },
+    { key = '[', mods = mod.SUPER_REV, action = act.MoveTabRelative(-1) },
+    { key = ']', mods = mod.SUPER_REV, action = act.MoveTabRelative(1) },
+
+    {
+        key = ',',
+        mods = mod.OPT,
+        action = wezterm.action_callback(function(window, pane)
+
+            local wez_config_path = os.getenv('HOME') .. '/.config/wezterm/wezterm.lua'
+            wezterm.log_info('wez config' .. wez_config_path)
+            window:perform_action(
+                wezterm.action.SpawnCommandInNewTab {
+                    args = { 'nvim', wez_config_path },
+                    set_environment_variables = {
+                        PATH = '/opt/homebrew/bin:' .. os.getenv('PATH')
+                    },
+                },
+                pane
+            )
+        end),
+    },
 
     -- copy mode
     { key = 'Enter', mods = mod.SUPER_REV, action = 'ActivateCopyMode' },
