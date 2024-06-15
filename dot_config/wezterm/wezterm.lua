@@ -3,13 +3,14 @@ local wezterm                       = require 'wezterm'
 local config                        = wezterm.config_builder()
 
 config.hide_tab_bar_if_only_one_tab = true
-config.window_background_opacity    = 0.85
+config.window_background_opacity    = 0.7
+config.macos_window_background_blur = 10
 config.initial_cols                 = 150
 config.initial_rows                 = 40
 
 config.font                         = wezterm.font('Cascadia Code')
 config.font_size                    = 12
-config.enable_scroll_bar            = true
+config.enable_scroll_bar            = false
 config.use_fancy_tab_bar            = false
 config.tab_bar_at_bottom            = true
 config.window_decorations           = 'RESIZE'
@@ -64,11 +65,6 @@ config.keys                         = {
     { key = 'j',          mods = 'LEADER',  action = act.ActivatePaneDirection('Down') },
     { key = 'h',          mods = 'LEADER',  action = act.ActivatePaneDirection('Left') },
     { key = 'l',          mods = 'LEADER',  action = act.ActivatePaneDirection('Right') },
-
-    { key = 'UpArrow',    mods = mod.OPT,   action = act.ActivatePaneDirection('Up') },
-    { key = 'DownArrow',  mods = mod.OPT,   action = act.ActivatePaneDirection('Down') },
-    { key = 'LeftArrow',  mods = mod.OPT,   action = act.ActivatePaneDirection('Left') },
-    { key = 'RightArrow', mods = mod.OPT,   action = act.ActivatePaneDirection('Right') },
 
     -- panes: resize_pane
     {
