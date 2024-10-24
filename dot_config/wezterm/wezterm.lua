@@ -14,7 +14,7 @@ config.enable_scroll_bar            = false
 config.use_fancy_tab_bar            = false
 config.tab_bar_at_bottom            = true
 config.window_decorations           = 'RESIZE'
-
+config.default_cursor_style         = 'BlinkingBlock'
 local act                           = wezterm.action
 
 local mod                           = {
