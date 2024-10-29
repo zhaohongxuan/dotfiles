@@ -1,5 +1,6 @@
 "==========================================
-" Email: hxzhenu@gmai.com
+" Email: hxzhenu@gmail.com
+" Author: https://github.com/zhaohongxuan
 " Desc: my ideavim config file
 "==========================================
 " set leader key
@@ -12,7 +13,7 @@ set incsearch
 set smartcase
 set ignorecase
 set showmode
-set scrolloff=5
+set scrolloff=0
 
 " plugins
 set ideamarks
@@ -22,6 +23,7 @@ set argtextobj
 set multiple-cursors
 set textobj-entire
 set vim-paragraph-motion
+" *ai* *ii* *aI* *iI*
 set textobj-indent
 set matchit
 
@@ -69,6 +71,7 @@ set idearefactormode=keep
 " nnoremap <Leader>sc :nohlsearch<CR>
 
 " easymotion
+map s <Plug>(easymotion-s)
 map <leader>f <Plug>(easymotion-s)
 
 
@@ -117,7 +120,7 @@ nnoremap <leader>vs :action IdeaVim.ReloadVimRc.reload<CR>
 " intellij built in key map
 
 nnoremap <leader>a :action GotoAction<CR>
-nnoremap <leader>b :action Bookmarks<CR>
+nnoremap <leader>b :action ShowBookmarks<CR>
 nnoremap <leader>c :action GotoClass<CR>
 nnoremap <leader>s :action SearchEverywhere<CR>
 nnoremap <leader>gc :action Git.CompareWithBranch<CR>
