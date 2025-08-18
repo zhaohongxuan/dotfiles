@@ -3,7 +3,7 @@ local wezterm                       = require 'wezterm'
 local config                        = wezterm.config_builder()
 
 config.hide_tab_bar_if_only_one_tab = true
-config.window_background_opacity    = 0.7
+config.window_background_opacity    = 0.85
 config.macos_window_background_blur = 10
 config.initial_cols                 = 150
 config.initial_rows                 = 40
@@ -14,7 +14,6 @@ config.enable_scroll_bar            = false
 config.use_fancy_tab_bar            = false
 config.tab_bar_at_bottom            = true
 config.window_decorations           = 'RESIZE'
-config.default_cursor_style         = 'BlinkingBlock'
 local act                           = wezterm.action
 
 local mod                           = {
@@ -112,7 +111,6 @@ config.keys                         = {
         key = ',',
         mods = mod.OPT,
         action = wezterm.action_callback(function(window, pane)
-
             local wez_config_path = os.getenv('HOME') .. '/.config/wezterm/wezterm.lua'
             wezterm.log_info('wez config' .. wez_config_path)
             window:perform_action(

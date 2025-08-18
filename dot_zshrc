@@ -12,7 +12,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="af-magic"
+ZSH_THEME="mgutz"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -85,7 +85,8 @@ alias v="nvim"
 #eval "$(starship init zsh)"
 export PATH="/Users/hank.zhao/Developer/git-fuzzy/bin:$PATH"
 #export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
-export JAVA_HOME="/opt/homebrew/opt/openjdk@11"
+#export JAVA_HOME="/opt/homebrew/opt/openjdk@11"
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home
 export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
 
 alias gcf='git checkout $( git branch | fzf)'
@@ -108,3 +109,4 @@ fh() {
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export GOOGLE_CLOUD_PROJECT="zeusjavacom"

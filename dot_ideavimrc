@@ -124,6 +124,7 @@ nnoremap <leader>b :action ShowBookmarks<CR>
 nnoremap <leader>c :action GotoClass<CR>
 nnoremap <leader>s :action SearchEverywhere<CR>
 nnoremap <leader>gc :action Git.CompareWithBranch<CR>
+nnoremap <leader>gl :action com.github.kawamataryo.copygitlink.CopyPermalink<CR>
 nnoremap <leader>gb :action Git.Branches<CR>
 nnoremap <leader>ga :action Annotate<CR>
 nnoremap <leader>gh :action Vcs.ShowTabbedFileHistory<CR>
